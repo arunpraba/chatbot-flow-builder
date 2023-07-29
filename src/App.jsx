@@ -1,5 +1,7 @@
+import Flow from './components/Flow'
+
 function App() {
-  return <h1>Hello</h1>
+  return <Flow />
 }
 
 export default App
