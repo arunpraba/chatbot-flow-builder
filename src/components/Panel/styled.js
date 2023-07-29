@@ -17,3 +17,17 @@ export const TextContainer = styled.div`
   place-items: center;
   flex-direction: column;
 `
+
+export const SettingsPanelHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  button {
+    cursor: pointer;
+    background: #fff;
+    border: 0;
+    padding: 0;
+    color: #222;
+  }
+`

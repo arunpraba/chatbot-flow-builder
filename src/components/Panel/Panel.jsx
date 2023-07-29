@@ -1,24 +1,29 @@
-import { BsChatText } from 'react-icons/bs'
-import { PanelContainer, TextContainer } from './styled'
+import PropTypes from 'prop-types'
+import { PanelContainer } from './styled'
+import { NodesPanel } from './NodesPanel'
+import { SettingsPanel } from './SettingsPanel'
 
-export const Panel = () => {
-  const onDragStart = (event, nodeType) => {
-    event.dataTransfer.setData('application/reactflow', nodeType)
-    event.dataTransfer.effectAllowed = 'move'
-  }
-
+export const Panel = ({ onChange, onBack, selectedNode }) => {
   return (
     <PanelContainer>
-      <div
-        className="dndnode"
-        onDragStart={(event) => onDragStart(event, 'custom')}
-        draggable
-      >
-        <TextContainer>
-          <BsChatText />
-          <span>Message</span>
-        </TextContainer>
-      </div>
+      {selectedNode ? (
+        <SettingsPanel
+          onChange={onChange}
+          onBack={onBack}
+          selectedNode={selectedNode}
+        />
+      ) : (
+        <NodesPanel />
+      )}
     </PanelContainer>
   )
+}
+
+Panel.propTypes = {
+  onChange: PropTypes.func,
+  onBack: PropTypes.func,
+  selectedNode: PropTypes.shape({
+    label: PropTypes.string,
+    id: PropTypes.string,
+  }),
 }
