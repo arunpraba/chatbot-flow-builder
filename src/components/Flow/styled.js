@@ -8,7 +8,6 @@ export const AppContainer = styled.div`
 
 export const Header = styled.header`
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;

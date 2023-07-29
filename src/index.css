@@ -72,3 +72,7 @@ button:focus-visible {
   flex: 1;
   min-height: 0;
 }
+
+.ml-auto {
+  margin-left: auto;
+}

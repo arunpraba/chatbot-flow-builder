@@ -9,7 +9,8 @@ import ReactFlow, {
   BackgroundVariant,
 } from 'reactflow'
 import { AppContainer, Header, MainContainer, FlowContainer } from './styled'
-import Panel from '../Panel'
+import { Panel } from '../Panel'
+import { CustomNode } from './CustomNode'
 
 const initialNodes = []
 
@@ -21,6 +22,10 @@ const defaultViewport = {
 
 let id = 0
 const getId = () => `dndnode_${id++}`
+
+const nodeTypes = {
+  custom: CustomNode,
+}
 
 export const Flow = () => {
   const reactFlowWrapper = useRef(null)
@@ -44,7 +49,6 @@ export const Flow = () => {
 
       const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect()
       const type = event.dataTransfer.getData('application/reactflow')
-      console.log({ type })
 
       if (!type) return
 
@@ -82,8 +86,9 @@ export const Flow = () => {
               onInit={setReactFlowInstance}
               onDrop={onDrop}
               onDragOver={onDragOver}
-              fitView
               defaultViewport={defaultViewport}
+              nodeTypes={nodeTypes}
+              fitView
             >
               <Background variant={BackgroundVariant.Dots} />
               <Controls />
