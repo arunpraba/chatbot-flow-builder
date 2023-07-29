@@ -1,8 +1,42 @@
-# React + Vite
+# BiteSpeed Frontend Task: Chatbot flow builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
 
-Currently, two official plugins are available:
+This is a simple chatbot flow builder. It allows you to create a chatbot flow by dragging and dropping nodes and connecting them together. The flow can be saved to the local storage and downloaded as a JSON file.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+1. Users can drag and drop nodes from the right panel to the canvas
+2. Users can connect nodes together by dragging the connector from one node to another
+3. Users can save the flow by clicking the save changes button (the flow will be saved to the local storage). The flow will be loaded from the local storage when the page is refreshed
+4. Users can download the flow as a JSON file by clicking the download button
+
+## Getting Started
+
+1. Clone the repo
+2. Install dependencies
+
+```
+npm install
+```
+
+3. Start the server
+
+```
+npm run dev
+```
+
+4. Open http://localhost:5173 in your browser or whatever port you have specified in the terminal
+
+## Tech Stack
+
+- Language - JavaScript
+- Framework - React
+- Css - styled-components
+- Flow - reactflow
+
+## If I had more time
+
+1. I would have added tests to ensure that the app is working as expected
+2. I would have added a feature to allow users to upload a JSON file to load a flow
+3. I would have split the app into smaller components to make it more modular
