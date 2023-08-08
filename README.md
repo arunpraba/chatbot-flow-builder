@@ -1,4 +1,4 @@
-# BiteSpeed Frontend Task: Chatbot flow builder
+# Chatbot flow builder
 
 ## [App Demo](https://arunpraba-bite-speed-fe-task.netlify.app/)
 
@@ -36,9 +36,3 @@ npm run dev
 - Framework - React
 - Css - styled-components
 - Flow - reactflow
-
-## If I had more time
-
-1. I would have added tests to ensure that the app is working as expected
-2. I would have added a feature to allow users to upload a JSON file to load a flow
-3. I would have split the app into smaller components to make it more modular
